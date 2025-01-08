@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language Selector</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background: url('https://i.ibb.co/w74yMwR/background.jpg') no-repeat center center/cover; /* Orqa fon rasmi */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9); /* Yengil oq fon, shaffoflik */
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .language-buttons button {
+      margin: 10px;
+      padding: 15px 25px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #007BFF;
+      color: #fff;
+      transition: background-color 0.3s ease;
+    }
+
+    .language-buttons button:hover {
+      background-color: #0056b3;
+    }
+
+    .content {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #007BFF;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>XSpinUz</h1>
+    <div class="language-buttons">
+      <button onclick="changeLanguage('uz')">O'zbek</button>
+      <button onclick="changeLanguage('ru')">Русский</button>
+      <button onclick="changeLanguage('en')">English</button>
+    </div>
+    <div id="content" class="content">
+      <!-- Content will be dynamically added here -->
+    </div>
+  </div>
+  <script>
+    function changeLanguage(language) {
+      const content = document.getElementById('content');
+      let text = '';
+
+      if (language === 'uz') {
+        text = `
+          <p>Botimiz: <a href="https://t.me/XSpinUzBot" target="_blank">@XSpinUzBot</a></p>
+          <p>Kanal: <a href="https://t.me/Xspin_News" target="_blank">@Xspin_News</a></p>
+          <p>Guruh: <a href="https://t.me/Xspin_uz" target="_blank">@Xspin_uz</a></p>
+          <p>Yaratuvchi: <a href="https://t.me/ulashevvv" target="_blank">@ulashevvv</a></p>
+        `;
+      } else if (language === 'ru') {
+        text = `
+          <p>Наш бот: <a href="https://t.me/XSpinUzBot" target="_blank">@XSpinUzBot</a></p>
+          <p>Канал: <a href="https://t.me/Xspin_News" target="_blank">@Xspin_News</a></p>
+          <p>Группа: <a href="https://t.me/Xspin_uz" target="_blank">@Xspin_uz</a></p>
+          <p>Создатель: <a href="https://t.me/ulashevvv" target="_blank">@ulashevvv</a></p>
+        `;
+      } else if (language === 'en') {
+        text = `
+          <p>Our Bot: <a href="https://t.me/XSpinUzBot" target="_blank">@XSpinUzBot</a></p>
+          <p>Channel: <a href="https://t.me/Xspin_News" target="_blank">@Xspin_News</a></p>
+          <p>Group: <a href="https://t.me/Xspin_uz" target="_blank">@Xspin_uz</a></p>
+          <p>Creator: <a href="https://t.me/ulashevvv" target="_blank">@ulashevvv</a></p>
+        `;
+      }
+
+      content.innerHTML = text;
+    }
+  </script>
+</body>
+  </html>
